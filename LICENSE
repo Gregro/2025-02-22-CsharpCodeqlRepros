@@ -1,6 +1,9 @@
 MIT License
 
+This repo contains code from the GitHub [CodeQL](https://github.com/github/codeql/) project, used under MIT License.  Changes are licensed under the same.
+
 Copyright (c) 2025 Greg
+Copyright (c) 2006-2025 GitHub, Inc.
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal

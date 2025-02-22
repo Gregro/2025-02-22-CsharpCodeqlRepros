@@ -10,7 +10,7 @@ class ILogger
     public void Warn(string message) { }
 }
 
-public static class LoggerExtensions {
+static class LoggerExtensions {
 
     public static void WarnSafe(this ILogger logger, string message) {
         logger.Warn(message);

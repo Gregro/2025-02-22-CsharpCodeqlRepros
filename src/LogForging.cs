@@ -13,7 +13,7 @@ class ILogger
 public static class LoggerExtensions {
 
     public static void WarnSafe(this ILogger logger, string message) {
-        logger.Warn(message.Replace(Environment.NewLine, ""));
+        logger.Warn(message);
     }
 
 }

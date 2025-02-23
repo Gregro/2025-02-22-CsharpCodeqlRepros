@@ -10,6 +10,14 @@ class ILogger
     public void Warn(string message) { }
 }
 
+static class LoggerExtensions {
+
+    public static void WarnSafe(this ILogger logger, string message) {
+        logger.Warn(message.Replace(Environment.NewLine, ""));
+    }
+
+}
+
 public class LogForgingHandler : IHttpHandler
 {
 
@@ -29,6 +37,9 @@ public class LogForgingHandler : IHttpHandler
         logger.Warn(WebUtility.HtmlEncode(username) + " logged in");
         // BAD: Logged as-is to TraceSource
         new TraceSource("Test").TraceInformation(username + " logged in");
+
+        // GOOD: uses safe extension method
+        logger.WarnSafe(username + " logged in");
 
         Microsoft.Extensions.Logging.ILogger logger2 = null;
         // BAD: Logged as-is
